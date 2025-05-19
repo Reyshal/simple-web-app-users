@@ -24,7 +24,7 @@ export default function UserTable() {
     }));
 
     axios
-      .get(`http://localhost:5001/api/users?page=${paginationModel.page + 1}&limit=${paginationModel.pageSize}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/users?page=${paginationModel.page + 1}&limit=${paginationModel.pageSize}`)
       .then((response) => {
         setState((prevState) => ({
           ...prevState,

@@ -12,7 +12,7 @@ export default function UserChart() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5001/api/users?groupBy=gender')
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/users?groupBy=gender`)
       .then((response) => {
         const data = response.data.groups.map((group, index) => ({
           id: index + 1,
